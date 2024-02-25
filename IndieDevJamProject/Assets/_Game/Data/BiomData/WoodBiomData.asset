@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9eb80d28afd13a4f94b0d8a460a2501, type: 3}
+  m_Name: WoodBiomData
+  m_EditorClassIdentifier: 
+  biomType: 0
+  blockPrefabs:
+  - {fileID: 8559841070796426547, guid: 4a220ecb66143814eb52673203c95a8b, type: 3}
+  - {fileID: 7050644570125948146, guid: cb5f2879497ca1146915537c2bd8de11, type: 3}
+  distanceBetweenBlocks: 2
+  distanceBeforeSpawnBLock: 15
+  initBlocksLine: 10
+  initialBrickPosition: {x: -3, y: 3}
+  brickPosition: {x: -3, y: 3}
