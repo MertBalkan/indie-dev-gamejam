@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2576562423796001100}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Wallset1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8538978335522498367}
   - component: {fileID: 5549497027057030019}
   - component: {fileID: 3601802784645472083}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: BrickWall1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 2415764943551428080}
   - component: {fileID: 3861741463040930027}
   - component: {fileID: 7191059528470739446}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: BrickWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
