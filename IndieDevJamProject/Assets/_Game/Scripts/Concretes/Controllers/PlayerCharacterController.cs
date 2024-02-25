@@ -8,6 +8,7 @@ namespace SnaileyGame.Controllers
     {
         [SerializeField] private TileController currentTile;
         private IInput _input;
+     
 
         protected override void Awake()
         {
@@ -23,13 +24,28 @@ namespace SnaileyGame.Controllers
         private void OnCollisionEnter2D(Collision2D other)
         {
             var otherTile = other.gameObject.GetComponent<TileController>();
-            
+
+            if (otherTile != null)
+            {
+                onGround = true;
+            }
+
             if (otherTile != null && !otherTile.Visited)
             {
                 currentTile = other.gameObject.GetComponent<TileController>();
                 
                 otherTile.SetIsVisited(true);
                 ScoreManager.Instance.IncreaseScore(10);
+            }
+        }
+        
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            var otherTile = other.gameObject.GetComponent<TileController>();
+
+            if (otherTile != null)
+            {
+                onGround = false;
             }
         }
     }

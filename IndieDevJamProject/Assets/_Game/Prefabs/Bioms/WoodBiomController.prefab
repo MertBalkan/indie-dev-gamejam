@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6338608932538282507}
-  - component: {fileID: 6338608932538282504}
+  - component: {fileID: 410323206255062578}
   m_Layer: 0
   m_Name: WoodBiomController
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6338608932538282504
+--- !u!114 &410323206255062578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6338608932538282505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665a36ec60a5dc348a0d49beb2c4c0b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 044797bec476e904fabc17507947e55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   biomSo: {fileID: 11400000, guid: 21d39cbc2d24ebd4bac4881f6b297c75, type: 2}

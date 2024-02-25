@@ -164,17 +164,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &30478102 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6338608932538282504, guid: 9eb1aefc348daa443ae7f02b241abe4f, type: 3}
-  m_PrefabInstance: {fileID: 2024973177}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665a36ec60a5dc348a0d49beb2c4c0b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &50390358
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  onGround: 0
   currentTile: {fileID: 0}
 --- !u!4 &746269725
 Transform:
@@ -702,6 +692,7 @@ GameObject:
   - component: {fileID: 907892728}
   - component: {fileID: 907892727}
   - component: {fileID: 907892729}
+  - component: {fileID: 907892730}
   m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
@@ -802,6 +793,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &907892730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907892725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7b203d9f56ee541834b50c72144703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910253562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,8 +1027,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  onGround: 1
   direction: 2
   length: 1
+--- !u!114 &1131369801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 410323206255062578, guid: 9eb1aefc348daa443ae7f02b241abe4f, type: 3}
+  m_PrefabInstance: {fileID: 2024973177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044797bec476e904fabc17507947e55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1223385732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1220,7 +1235,7 @@ MonoBehaviour:
   camera: {fileID: 631011044}
   currentBiom: {fileID: 0}
   allBioms:
-  - {fileID: 30478102}
+  - {fileID: 1131369801}
   - {fileID: 573886540}
 --- !u!4 &1845693277
 Transform:

@@ -72,7 +72,9 @@ namespace SnaileyGame.Controllers
 
         private IEnumerator MovePlayerToOppositePosition(int side)
         {
-            _characterController.transform.Translate((currentScale / 10) * side * Vector3.right * Time.deltaTime * 400f);
+             _characterController.transform.Translate((currentScale / 10) * side * Vector3.right * Time.deltaTime * 400f);
+            // _characterController.transform.GetComponent<Rigidbody2D>().AddForce((currentScale / 10) * side * Vector3.right * Time.deltaTime * 5000f);
+            
             yield return new WaitForSeconds(1.0F);
         }
 
@@ -83,7 +85,7 @@ namespace SnaileyGame.Controllers
 
         private void LeftClickScale()
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && _characterController.OnGround)
             {
                 currentScale += Time.deltaTime * hookScaleSpeed;
 
@@ -121,6 +123,7 @@ namespace SnaileyGame.Controllers
             if(Input.GetMouseButtonUp(0) && _isHooking && hookEndPivot.TileController == null)
             {
                 SetCurrentScaleToMinimum();
+                _playerAnimation.PlayPlayerAirAnimation();
                 Vector3 resetScale = new Vector3(0.4f, 0.4f, 0.4f);
                 hookPivot.transform.localScale = resetScale;
             }
@@ -128,10 +131,10 @@ namespace SnaileyGame.Controllers
 
         private void SetCurrentScaleToMinimum()
         {
-            
             var minScale = 0.4f;
             currentScale = minScale;
         }
+        
         private void FixedUpdate()
         {
             

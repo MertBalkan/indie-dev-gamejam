@@ -27,9 +27,9 @@ namespace SnaileyGame.Animations
             _animator.SetTrigger("shieldOut");
         }
 
-        public void PlayPlayerAirAnimation(bool value)
+        public void PlayPlayerAirAnimation()
         {
-            _animator.SetBool("playerAir", value);
+            _animator.SetTrigger("playerAir");
         }
     }
 }

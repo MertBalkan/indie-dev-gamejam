@@ -15,7 +15,6 @@ MonoBehaviour:
   biomType: 0
   blockPrefabs:
   - {fileID: 8559841070796426547, guid: 4a220ecb66143814eb52673203c95a8b, type: 3}
-  - {fileID: 7050644570125948146, guid: cb5f2879497ca1146915537c2bd8de11, type: 3}
   distanceBetweenBlocks: 2
   distanceBeforeSpawnBLock: 15
   initBlocksLine: 10
