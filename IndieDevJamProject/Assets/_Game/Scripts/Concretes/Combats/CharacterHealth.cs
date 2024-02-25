@@ -5,7 +5,7 @@ namespace SnaileyGame.Combats
     public class CharacterHealth : MonoBehaviour, IHealth
     {
         
-        [SerializeField] private float _maxHealth = 100f;
+        [SerializeField] private float maxHealth = 100f;
         private float _currentHealth;
         
         public float CurrentHealth { get; }
@@ -13,15 +13,22 @@ namespace SnaileyGame.Combats
 
         private void Awake()
         {
-            _currentHealth = _maxHealth;
+            _currentHealth = maxHealth;
         }
 
         public void TakeDamage(float damageCount)
         {
+            if(IsDead) return;
+            _currentHealth -= damageCount;
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
             }
+        }
+
+        private void Update()
+        {
+            UnityEngine.Debug.Log("Health: " + _currentHealth);
         }
     }
 }

@@ -1,27 +1,37 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SnaileyGame.Controllers
 {
     public class ACController : MonoBehaviour
     {
-        private void OnCollisionEnter2D(Collision2D other)
+        [SerializeField] private bool acPlaying = false;
+        [SerializeField] private float maxAcPlayTime = 2f;
+        [SerializeField] private float acCloseTime = 3f;
+
+        public bool ACPlaying => acPlaying;
+
+        private void Start()
         {
-            Debug.Log(other.gameObject.name);
-            
-            if (other.gameObject.GetComponent<PlayerCharacterController>() != null)
-            {
-                Debug.Log("TEST!");
-            }
+            StartCoroutine(PlayAC());
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private IEnumerator PlayAC()
         {
-            // Debug.Log(other.gameObject.name);
-            //
-            // if (other.gameObject.GetComponent<PlayerCharacterController>() != null)
-            // {
-            //     Debug.Log("TEST!");
-            // }
+            while (true)
+            {
+                if (!acPlaying)
+                {
+                    acPlaying = true;
+                }
+                else 
+                {
+                    yield return new WaitForSeconds(maxAcPlayTime);
+                    acPlaying = false;
+                }
+
+                yield return new WaitForSeconds(acCloseTime);
+            }
         }
     }
 }
