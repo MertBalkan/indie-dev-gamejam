@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Numerics;
+using SnaileyGame.Animations;
 using SnaileyGame.Movements;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -16,6 +17,7 @@ namespace SnaileyGame.Controllers
         [SerializeField] private float hookScaleSpeed = 0;
         
         private BaseCharacterController _characterController;
+        private PlayerAnimation _playerAnimation;
         private IFlip _flip;
         
         private bool _isHooking = false;
@@ -23,6 +25,7 @@ namespace SnaileyGame.Controllers
         private void Awake()
         {
             _characterController = GetComponentInParent<BaseCharacterController>();
+            _playerAnimation = _characterController.GetComponent<PlayerAnimation>();
             _flip = new FlipWithTransform(_characterController);
         }
 
@@ -104,6 +107,7 @@ namespace SnaileyGame.Controllers
             if(Input.GetMouseButtonUp(0) && _isHooking && hookEndPivot.TileController != null)
             {
                 _characterController.transform.localPosition = hookEndPivot.transform.position;
+                _playerAnimation.PlayShieldInAnimation();
                 hookEndPivot.TileController = null;
                 SetCurrentScaleToMinimum();
                 Vector3 resetScale = new Vector3(0.4f, 0.4f, 0.4f);

@@ -8,13 +8,28 @@ namespace SnaileyGame.Animations
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
+            _animator = GetComponentInChildren<Animator>();
         }
 
 
         private void Update()
         {
             
+        }
+
+        public void PlayShieldInAnimation()
+        {
+            _animator.SetTrigger("shieldIn");
+        }
+
+        public void PlayShieldOutAnimation()
+        {
+            _animator.SetTrigger("shieldOut");
+        }
+
+        public void PlayPlayerAirAnimation(bool value)
+        {
+            _animator.SetBool("playerAir", value);
         }
     }
 }
