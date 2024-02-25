@@ -21,6 +21,8 @@ namespace SnaileyGame.Controllers
         private IFlip _flip;
         
         private bool _isHooking = false;
+        private bool _lMoving = false;
+        private bool _rMoving = false;
 
         private void Awake()
         {
@@ -35,6 +37,16 @@ namespace SnaileyGame.Controllers
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
             AimToPosition(worldPosition);
             LeftClickScale();
+
+            if (_rMoving)
+            {
+                StartCoroutine(MovePlayerToOppositePosition(1));
+            }
+
+            if (_lMoving)
+            {
+                StartCoroutine(MovePlayerToOppositePosition(-1));
+            }
         }
 
         void AimToPosition(Vector3 targetPosition)
@@ -47,35 +59,38 @@ namespace SnaileyGame.Controllers
             {
                 if (Input.GetMouseButtonUp(0) && hookEndPivot.TileController == null)
                 {
-                    StartCoroutine(MovePlayerToOppositePosition(1));
+                    _rMoving = true;
                 }
             }
             else
             {
                 if (Input.GetMouseButtonUp(0) && hookEndPivot.TileController == null)
                 {
-                    StartCoroutine(MovePlayerToOppositePosition(-1));
+                    _lMoving = true;
                 }
             }
             
-            if ((angle >= 90f && angle <= 180f) || (angle >= -180f && angle <= -90f))
-            {
-                // _flip.Flip(-1, 0);
-            }
-            else
-            {
-                // _flip.Flip(1, 0);
-            }
+            // if ((angle >= 90f && angle <= 180f) || (angle >= -180f && angle <= -90f))
+            // {
+            //     _flip.Flip(-1);
+            // }
+            // else
+            // {
+            //     _flip.Flip(1);
+            // }
 
             hookPivot.transform.eulerAngles = Vector3.forward * angle;
         }
 
         private IEnumerator MovePlayerToOppositePosition(int side)
         {
-             _characterController.transform.Translate((currentScale / 10) * side * Vector3.right * Time.deltaTime * 400f);
+            _characterController.transform.Translate((currentScale / 10) * side * Vector3.right * Time.deltaTime * 400f);
+            _characterController.transform.Translate((currentScale / 10) * side * Vector3.up * Time.deltaTime * 100f);
             // _characterController.transform.GetComponent<Rigidbody2D>().AddForce((currentScale / 10) * side * Vector3.right * Time.deltaTime * 5000f);
-            
-            yield return new WaitForSeconds(1.0F);
+            yield return new WaitForSeconds(0.2f);
+            _rMoving = false;
+            _lMoving = false;
+            yield break;
         }
 
         private void AdjustAngleFromHookDirection()
