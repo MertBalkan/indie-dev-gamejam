@@ -104,7 +104,7 @@ namespace SnaileyGame.Controllers
 
         private void LeftClickScale()
         {
-            if (Input.GetMouseButton(0) && _characterController.OnGround)
+            if (Input.GetMouseButton(0) )
             {
                 currentScale += Time.deltaTime * hookScaleSpeed;
 
@@ -154,9 +154,9 @@ namespace SnaileyGame.Controllers
             currentScale = minScale;
         }
         
-        public void IncreaseHookValue()
+        public void IncreaseHookValue(float setScale)
         {
-            maxScale += hookIncreaseValue;
+            maxScale = setScale;
         }
     }
 }

@@ -68,7 +68,7 @@ namespace SnaileyGame.Managers
             {
                 allBioms[_currentBiomIndex].gameObject.SetActive(true);
                 currentBiom = allBioms[_currentBiomIndex];
-                hookController.IncreaseHookValue();
+          
                 currentBiom.transform.position = new Vector2(currentBiom.transform.position.x,
                     currentBiom.transform.position.y + biomOffset);
                 _biomUpdated = false;

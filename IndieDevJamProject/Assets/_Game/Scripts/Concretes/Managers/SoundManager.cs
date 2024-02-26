@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 namespace SnaileyGame.Managers
@@ -9,6 +7,7 @@ namespace SnaileyGame.Managers
     {
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip clickButton;
+        [SerializeField] private AudioClip bgmusic;
         [SerializeField] private Slider volumeSlider;
         private void Awake()
         {
@@ -26,6 +25,7 @@ namespace SnaileyGame.Managers
             {
                 Load();
             }
+            
         }
 
         public void PlayClickSound()
@@ -35,17 +35,20 @@ namespace SnaileyGame.Managers
 
         public void ChangeVolume()
         {
-            AudioListener.volume = volumeSlider.value;
+            if(volumeSlider)
+                AudioListener.volume = volumeSlider.value;
         }
 
         public void Load()
         {
-            volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+            if(volumeSlider)
+                volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
         }
         
         public void Save()
         {
-            PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+            if(volumeSlider)
+             PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
         }
     }
 }

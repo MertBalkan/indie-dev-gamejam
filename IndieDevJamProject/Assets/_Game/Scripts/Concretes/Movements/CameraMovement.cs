@@ -1,4 +1,6 @@
 using System.Collections;
+using SnaileyGame.Controllers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SnaileyGame.Movements
@@ -6,17 +8,37 @@ namespace SnaileyGame.Movements
     public class CameraMovement : MonoBehaviour, IMovement
     {
         [SerializeField] private float cameraMoveSpeed = 3f;
+        [SerializeField] private HookController _hookController;
         public float timeRate = 0.5f;
         public float difficultyDecreaseRate = 0.2f;
         public float minimumDifficulty = 0.6f;
-
+      
+//200
+//480
+//875
         private void Start()
         {
+            _hookController = FindObjectOfType<HookController>();
         }
 
         private void Update()
         {
             StartCoroutine(CameraMoveUp());
+
+            if (transform.position.y >= 195 && transform.position.y <= 480)
+            {
+                _hookController.IncreaseHookValue(4f);
+            }
+            
+            if (transform.position.y > 480 && transform.position.y < 875f)
+            {
+                _hookController.IncreaseHookValue(5f);
+            }
+            
+            if (transform.position.y >= 875f)
+            {
+                _hookController.IncreaseHookValue(6);
+            }
         }
 
         private void MoveUp()
@@ -42,7 +64,6 @@ namespace SnaileyGame.Movements
                 }
             }
         }
-
         public void Move(float direction)
         {
             
