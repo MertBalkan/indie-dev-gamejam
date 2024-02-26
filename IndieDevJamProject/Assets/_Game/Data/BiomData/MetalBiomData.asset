@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eb80d28afd13a4f94b0d8a460a2501, type: 3}
   m_Name: MetalBiomData
   m_EditorClassIdentifier: 
-  biomType: 0
+  biomType: 2
   blockPrefabs:
-  - {fileID: 4413986111540631313, guid: 936b0bab011d005489c92ddefc5b40aa, type: 3}
-  - {fileID: 5023268090451399123, guid: 553dedada805f8f43be663572dd3176b, type: 3}
+  - {fileID: 2260767625192560393, guid: a59d64524d1175846a65be856db57dd1, type: 3}
+  - {fileID: 1562368252719119950, guid: 93f79e44d4b6c1343b59b21a6d1dc526, type: 3}
   - {fileID: 1409613963893989828, guid: 3ec4c9588a32b3c4289d126a3b4ffc45, type: 3}
   - {fileID: 5442299958275003059, guid: 70c35cc53422d614c8fd5804eed84e93, type: 3}
   - {fileID: 858527138042587285, guid: facc2715c2b88a6489ffe159bd23a194, type: 3}

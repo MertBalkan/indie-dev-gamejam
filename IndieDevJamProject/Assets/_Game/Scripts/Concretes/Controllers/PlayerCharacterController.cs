@@ -1,6 +1,10 @@
+using System;
+using System.Collections;
 using SnaileyGame.Combats;
 using SnaileyGame.Inputs;
 using SnaileyGame.Managers;
+using SnaileyGame.Movements;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SnaileyGame.Controllers
@@ -61,20 +65,39 @@ namespace SnaileyGame.Controllers
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            var ac = other.gameObject.GetComponent<ACController>();
-
-            if (ac != null && ac.ACPlaying)
-            {
-                transform.Translate(Vector3.right * Time.deltaTime * 2f);
-            }
-
             var otherTile = other.gameObject.GetComponent<TileController>();
 
             if (otherTile != null && otherTile.IsBreakable)
             {
                 transform.SetParent(null);
-                otherTile.GetComponent<SpriteRenderer>().sprite = otherTile.breakSprite;
+                StartCoroutine(DeactivateAfterDelay(otherTile, 0.5f));
             }
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            var ac = other.gameObject.GetComponent<ACController>();
+
+            if (ac != null && ac.ACPlaying)
+            {
+                if (ac.GetComponent<SpriteRenderer>().flipX)
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * 2f);
+                }
+
+                if (!ac.GetComponent<SpriteRenderer>().flipX)
+                {
+                    transform.Translate(Vector3.right * Time.deltaTime * 2f);
+                }
+            }
+
+        }
+
+        private IEnumerator DeactivateAfterDelay(TileController obj, float delay)
+        {
+            obj.GetComponent<SpriteRenderer>().sprite = obj.breakSprite;
+            yield return new WaitForSeconds(delay);
+            obj.gameObject.SetActive(false);
         }
     }
 }
