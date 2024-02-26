@@ -9,75 +9,74 @@ namespace SnaileyGame.Controllers
     public abstract class BaseBiomController : MonoBehaviour
     {
         [SerializeField] private BiomScriptableObject biomSo;
-        public List<TileController> blocksPool = new List<TileController>();
+        public List<GameObject> blocksPool = new List<GameObject>();
+        public List<GameObject> wallsPool = new List<GameObject>();
         
-        private float _currentBlockY;
+        [SerializeField] private float _currentBlockY;
+        [SerializeField] private float _currentWallY;
 
         public float CurrentBlockY
         {
             get => _currentBlockY;
             set => _currentBlockY = value;
         }
+        
+        public float CurrentWallY
+        {
+            get => _currentWallY;
+            set => _currentWallY = value;
+        }
 
         public BiomScriptableObject BiomSo => biomSo;
         
         private void Awake()
         {
-            // player = FindObjectOfType<PlayerCharacterController>();
-           // InitSideWalls();
+           InitSideWalls();
            InitBlocks();	
         }
 
-        private void Update()
+        private void InitSideWalls()
         {
-           // if (currentWallY - player.position.y < distanceBeforeSpawn)
-           // {
-           //     // SpawnSideWall();
-           // }
-
+            for (int i = 0; i < biomSo.initWallsLine; ++i)
+            {
+                Vector2 pos = new Vector2(-8.81f, _currentWallY);
+                GameObject go = Instantiate(biomSo.wallsPrefab[Random.Range(0, biomSo.wallsPrefab.Count)], pos, Quaternion.identity, transform);
+                wallsPool.Add(go);
+                _currentWallY += biomSo.wallTall;
+            }
         }
-
-        // private void InitSideWalls()
-        // {
-        //     for (int i = 0; i < initialWalls; ++i)
-        //     {
-        //         Vector2 pos = new Vector2(0, currentWallY);
-        //         GameObject go = Instantiate(wallsPrefab, pos, Quaternion.identity, transform);
-        //         wallPool.Add(go);
-        //         currentWallY += wallTall;
-        //     }
-        // }
 
         private void InitBlocks()
         {
            for (int i = 0; i < biomSo.initBlocksLine; i++)
            {
                Vector2 pos = new Vector2(Random.Range(biomSo.initialBrickPosition.x, biomSo.initialBrickPosition.y), _currentBlockY);
-               TileController go = Instantiate(biomSo.blockPrefabs[Random.Range(0, biomSo.blockPrefabs.Count)], pos, Quaternion.identity, transform);
+               GameObject go = Instantiate(biomSo.blockPrefabs[Random.Range(0, biomSo.blockPrefabs.Count)], pos, Quaternion.identity, transform);
                blocksPool.Add(go);
                _currentBlockY += biomSo.distanceBetweenBlocks;
            }
         }
 
-        // private void SpawnSideWall()
-        // {
-        //     wallPool[0].transform.position = new Vector2(0, currentWallY);
-        //     currentWallY += wallTall;
-        //
-        //     GameObject temp = wallPool[0];
-        //     wallPool.RemoveAt(0);
-        //     wallPool.Add(temp);
-        // }
-        //
         public void SpawnBlocks()
         {  
            blocksPool[0].transform.position = new Vector2(Random.Range(biomSo.brickPosition.x, biomSo.brickPosition.y), _currentBlockY);
            _currentBlockY += biomSo.distanceBetweenBlocks;
 
-           TileController temp = blocksPool[0];
-           temp.SetIsVisited(false);
+           GameObject temp = blocksPool[0];
+           // temp.GetComponentInChildren<TileController>().SetIsVisited(false);
            blocksPool.RemoveAt(0);
            blocksPool.Add(temp);
         }
+        
+        public void SpawnSideWall()
+        {
+            wallsPool[0].transform.position = new Vector2(-8.81f, _currentWallY);
+            _currentWallY += biomSo.wallTall;
+        
+            GameObject temp = wallsPool[0];
+            wallsPool.RemoveAt(0);
+            wallsPool.Add(temp);
+        }
+        
     }
 }

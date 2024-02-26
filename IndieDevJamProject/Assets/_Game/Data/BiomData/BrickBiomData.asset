@@ -14,10 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   biomType: 1
   blockPrefabs:
-  - {fileID: 2576562423796001101, guid: 5c6ed9d27add4ce408830221e811f735, type: 3}
-  - {fileID: -8336292376463441288, guid: 118721feac634fe428dffc851ea567b6, type: 3}
-  distanceBetweenBlocks: 3
-  distanceBeforeSpawnBLock: 15
-  initBlocksLine: 10
-  initialBrickPosition: {x: -4, y: 4}
-  brickPosition: {x: -4, y: 4}
+  - {fileID: 513254833642230137, guid: ee785392e6d6d33438ac2c95c5835734, type: 3}
+  - {fileID: 9144679260962147059, guid: 2d3a49c1cc571cd4cb7bbc56c975d657, type: 3}
+  - {fileID: 1850796241553159534, guid: 0a7d34ccfba1da44dbf435972c305bcb, type: 3}
+  - {fileID: 3767466535362087853, guid: 8183d7ca4f3ce06428c1e2d75b46dacd, type: 3}
+  - {fileID: 3701196170298714709, guid: 5a31d6f2d11b5f6429ca58de6ed239d7, type: 3}
+  - {fileID: 5515977825880304709, guid: 7ba4c9d2050101a4e8d9811d626950cf, type: 3}
+  - {fileID: 110410392540933771, guid: 4bbc4b85e349a33458d6b19591c1fa81, type: 3}
+  distanceBetweenBlocks: 30
+  distanceBeforeSpawnBLock: 20
+  initBlocksLine: 2
+  initialBrickPosition: {x: 1, y: 2}
+  brickPosition: {x: 1, y: 2}
+  initWallsLine: 5
+  wallTall: 11.25
+  distanceBeforeSpawnWall: 5
+  wallsPrefab:
+  - {fileID: 2576562423796001089, guid: 57e7f157e32bbe24aacfb1f4e63c0992, type: 3}
+  - {fileID: 2576562423796001089, guid: 660d136f54fd102468a8d932215f9c20, type: 3}
+  - {fileID: 2576562423796001089, guid: 5bb8df31b09e22f4883473457d280e33, type: 3}
+  - {fileID: 2576562423796001089, guid: bfd4488d3ba9490468a8a8daba068791, type: 3}
+  - {fileID: 2576562423796001089, guid: d1c2751f91454fc4a9ac8d671ecf49e0, type: 3}
+  - {fileID: 2576562423796001089, guid: 3fa46299297afc747894620f41ae9466, type: 3}

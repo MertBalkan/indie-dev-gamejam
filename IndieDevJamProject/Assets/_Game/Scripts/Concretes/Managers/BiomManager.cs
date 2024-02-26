@@ -16,6 +16,8 @@ namespace SnaileyGame.Managers
 
         private bool _biomUpdated = false;
         private bool _updateScore = false;
+
+        private int _currentBiomIndex = 0;
         
         private void Awake()
         {
@@ -24,7 +26,9 @@ namespace SnaileyGame.Managers
 
         private void Start()
         {
-            currentBiom = allBioms[0];
+            DeactivateBioms();
+            currentBiom = allBioms[_currentBiomIndex];
+            currentBiom.gameObject.SetActive(true);
         }
 
         private void Update()
@@ -33,6 +37,11 @@ namespace SnaileyGame.Managers
             {
                 currentBiom.SpawnBlocks();
             }
+            
+            if (currentBiom.CurrentWallY - camera.transform.position.y < currentBiom.BiomSo.distanceBeforeSpawnWall)
+            {
+                currentBiom.SpawnSideWall();
+            }
 
             UpdateBiom();
         }
@@ -40,18 +49,28 @@ namespace SnaileyGame.Managers
         public void UpdateBiom()
         {
             
-            if (ScoreManager.Instance.Score >= 40 && !_updateScore)
+            if ((camera.transform.position.y >= 20 && camera.transform.position.y <= 200) && !_updateScore)
             {
                 _biomUpdated = true;
                 _updateScore = true;
+
+                allBioms[_currentBiomIndex].gameObject.SetActive(false);
+                _currentBiomIndex++;
             }
+            
+            //todo: fix
 
             if (_biomUpdated && _updateScore)
             {
-                allBioms[1].gameObject.SetActive(true);
-                currentBiom = allBioms[1];
+                allBioms[_currentBiomIndex].gameObject.SetActive(true);
+                currentBiom = allBioms[_currentBiomIndex];
                 _biomUpdated = false;
             }
+        }
+        
+        private void DeactivateBioms()
+        {
+            allBioms.ForEach(b => b.gameObject.SetActive(false));
         }
     }
 }

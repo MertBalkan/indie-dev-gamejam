@@ -1,3 +1,5 @@
+using System;
+
 namespace SnaileyGame.Managers
 {
     public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
@@ -8,6 +10,11 @@ namespace SnaileyGame.Managers
         private void Awake()
         {
             ApplySingleton(this);
+        }
+
+        private void Update()
+        {
+            UnityEngine.Debug.Log(_score);
         }
 
         public void IncreaseScore(int amount)
