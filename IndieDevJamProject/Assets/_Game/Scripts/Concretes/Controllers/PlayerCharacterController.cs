@@ -11,6 +11,7 @@ namespace SnaileyGame.Controllers
 {
     public class PlayerCharacterController : BaseCharacterController
     {
+        [SerializeField] private float SEZ_TEST = 3;
         [SerializeField] private TileController currentTile;
         [SerializeField] private CharacterHealth _characterHealth;
         private IInput _input;
@@ -70,7 +71,7 @@ namespace SnaileyGame.Controllers
             if (otherTile != null && otherTile.IsBreakable)
             {
                 transform.SetParent(null);
-                StartCoroutine(DeactivateAfterDelay(otherTile, 0.5f));
+                StartCoroutine(DeactivateAfterDelay(otherTile, SEZ_TEST));
             }
         }
 
@@ -87,7 +88,7 @@ namespace SnaileyGame.Controllers
 
                 if (!ac.GetComponent<SpriteRenderer>().flipX)
                 {
-                    transform.Translate(Vector3.right * Time.deltaTime * 2f);
+                    transform.Translate(Vector3.right * Time.deltaTime * 3f);
                 }
             }
 
