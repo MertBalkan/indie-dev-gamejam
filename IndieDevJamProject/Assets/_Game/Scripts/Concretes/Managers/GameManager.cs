@@ -1,3 +1,6 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace SnaileyGame.Managers
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -6,12 +9,23 @@ namespace SnaileyGame.Managers
         {
             ApplySingleton(this);
         }
-
-        public void PlayGame()
+  
+        public void LoadSelfScene()
         {
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        
-        public void
+        public void LoadSceneByBuildIndex()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        public void LoadSceneByIndex(int sceneIndex)
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

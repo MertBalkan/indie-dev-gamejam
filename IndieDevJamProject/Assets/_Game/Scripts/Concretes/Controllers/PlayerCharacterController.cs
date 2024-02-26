@@ -1,9 +1,6 @@
-using System.Collections;
 using SnaileyGame.Combats;
 using SnaileyGame.Inputs;
 using SnaileyGame.Managers;
-using SnaileyGame.Movements;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SnaileyGame.Controllers
@@ -42,11 +39,6 @@ namespace SnaileyGame.Controllers
                 otherTile.SetIsVisited(true);
                 ScoreManager.Instance.IncreaseScore(10);
             }
-            
-            if (otherTile != null && otherTile.IsBreakable)
-            {
-                otherTile.AddComponent<PlatformMovement>();
-            }
         }
 
         private void OnCollisionExit2D(Collision2D other)
@@ -81,14 +73,8 @@ namespace SnaileyGame.Controllers
             if (otherTile != null && otherTile.IsBreakable)
             {
                 transform.SetParent(null);
-                StartCoroutine(DeactivateAfterDelay(otherTile.gameObject, 1.2f));
+                otherTile.GetComponent<SpriteRenderer>().sprite = otherTile.breakSprite;
             }
-        }
-
-        private IEnumerator DeactivateAfterDelay(GameObject obj, float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            obj.SetActive(false);
         }
     }
 }

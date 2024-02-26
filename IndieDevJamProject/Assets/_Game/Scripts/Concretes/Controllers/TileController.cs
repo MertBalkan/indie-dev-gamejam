@@ -7,6 +7,7 @@ namespace SnaileyGame.Controllers
     public class TileController : MonoBehaviour
     {
         [SerializeField] private bool isBreakable;
+        [SerializeField] public Sprite breakSprite;
         private bool _visited = false;
         public bool Visited => _visited;
         public bool IsBreakable => isBreakable;

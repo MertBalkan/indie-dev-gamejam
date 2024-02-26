@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBreakable: 1
+  breakSprite: {fileID: 21300000, guid: e28d70256bde6b745bb65c45b4721501, type: 3}
+  speed: 5
+  moveDistance: 10
 --- !u!61 &2576562423796001090
 BoxCollider2D:
   m_ObjectHideFlags: 0
