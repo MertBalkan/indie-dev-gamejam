@@ -27,5 +27,10 @@ namespace SnaileyGame.Managers
         {
             Application.Quit();
         }
+
+        public void PlayClick()
+        {
+            SoundManager.Instance.PlayClickSound();
+        }
     }
 }

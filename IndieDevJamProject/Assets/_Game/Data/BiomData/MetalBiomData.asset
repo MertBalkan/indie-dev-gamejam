@@ -16,12 +16,11 @@ MonoBehaviour:
   blockPrefabs:
   - {fileID: 2260767625192560393, guid: a59d64524d1175846a65be856db57dd1, type: 3}
   - {fileID: 1562368252719119950, guid: 93f79e44d4b6c1343b59b21a6d1dc526, type: 3}
-  - {fileID: 1409613963893989828, guid: 3ec4c9588a32b3c4289d126a3b4ffc45, type: 3}
-  - {fileID: 5442299958275003059, guid: 70c35cc53422d614c8fd5804eed84e93, type: 3}
-  - {fileID: 858527138042587285, guid: facc2715c2b88a6489ffe159bd23a194, type: 3}
-  - {fileID: 6224210891860610556, guid: 231457dc2123fb842930f998ea65580e, type: 3}
-  - {fileID: 7562305084520718274, guid: f83296c060bbb074788d2387710f4709, type: 3}
-  distanceBetweenBlocks: 20
+  - {fileID: 6284467116486798194, guid: a9df05c284a47dd478aea1545d7dfa31, type: 3}
+  - {fileID: 1715080170918585757, guid: 19671ce277f7ce443b620cd93e61fd59, type: 3}
+  - {fileID: 472759442469321720, guid: 3fc3b3b5a6c1e314fb95483f3a407169, type: 3}
+  - {fileID: 7487376696670084708, guid: bddb9d5445f405d4da257774ce49c74f, type: 3}
+  distanceBetweenBlocks: 40
   distanceBeforeSpawnBLock: 20
   initBlocksLine: 5
   initialBrickPosition: {x: 0, y: 0}
@@ -30,8 +29,8 @@ MonoBehaviour:
   wallTall: 11.25
   distanceBeforeSpawnWall: 5
   wallsPrefab:
-  - {fileID: 2576562423796001089, guid: 26dbf12c926965549ac54075eb6e3152, type: 3}
-  - {fileID: 2576562423796001089, guid: bbaaaa7ff10d83f4192ca942edf818e8, type: 3}
-  - {fileID: 2576562423796001089, guid: 878e2f2a06cb5cc48bfb09e0ee0de508, type: 3}
-  - {fileID: 2576562423796001089, guid: 913d35d19014aab41b1e0e229b840cb2, type: 3}
-  - {fileID: 2576562423796001089, guid: 16db6c4251b6a9247b26bb0e0c3f791e, type: 3}
+  - {fileID: 2576562423796001089, guid: 018197dfbeb0f0d41bfadc99b257fe40, type: 3}
+  - {fileID: 2576562423796001089, guid: 4113e93c9e57ee341a89f3cab5526a78, type: 3}
+  - {fileID: 2576562423796001089, guid: b33fce6d7b15eab44a5a3cfeef169a71, type: 3}
+  - {fileID: 2576562423796001089, guid: 94eb386561f51884fbf8db4baa21a9ee, type: 3}
+  - {fileID: 2576562423796001089, guid: 7fb8d8b3fcec325439fba015ccbe0e6e, type: 3}

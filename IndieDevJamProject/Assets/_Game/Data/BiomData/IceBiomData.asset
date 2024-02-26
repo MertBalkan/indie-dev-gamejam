@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eb80d28afd13a4f94b0d8a460a2501, type: 3}
   m_Name: IceBiomData
   m_EditorClassIdentifier: 
-  biomType: 0
+  biomType: 3
   blockPrefabs:
-  - {fileID: 4413986111540631313, guid: 936b0bab011d005489c92ddefc5b40aa, type: 3}
-  - {fileID: 5023268090451399123, guid: 553dedada805f8f43be663572dd3176b, type: 3}
-  - {fileID: 1409613963893989828, guid: 3ec4c9588a32b3c4289d126a3b4ffc45, type: 3}
-  - {fileID: 5442299958275003059, guid: 70c35cc53422d614c8fd5804eed84e93, type: 3}
-  - {fileID: 858527138042587285, guid: facc2715c2b88a6489ffe159bd23a194, type: 3}
-  - {fileID: 6224210891860610556, guid: 231457dc2123fb842930f998ea65580e, type: 3}
-  - {fileID: 7562305084520718274, guid: f83296c060bbb074788d2387710f4709, type: 3}
-  distanceBetweenBlocks: 20
+  - {fileID: 3133709208620941915, guid: b912b0cce45e5d845bd5ee5250ae9033, type: 3}
+  - {fileID: 3133709208620941915, guid: 98711c84256bce94593e9baa6f0ffc7e, type: 3}
+  - {fileID: 3133709208620941915, guid: 390acd7ce8bc6af46af5224319b41070, type: 3}
+  - {fileID: 3133709208620941915, guid: 0ab91d23e98bbc04fbd07f56d7f9d6b0, type: 3}
+  - {fileID: 3133709208620941915, guid: ca016de890388dc41b3425bc9b9a841f, type: 3}
+  - {fileID: 3133709208620941915, guid: baf5ff52dd6c0484db1e49f9176913e8, type: 3}
+  distanceBetweenBlocks: 30
   distanceBeforeSpawnBLock: 20
   initBlocksLine: 5
   initialBrickPosition: {x: 0, y: 0}
@@ -30,8 +29,4 @@ MonoBehaviour:
   wallTall: 11.25
   distanceBeforeSpawnWall: 5
   wallsPrefab:
-  - {fileID: 2576562423796001089, guid: 26dbf12c926965549ac54075eb6e3152, type: 3}
-  - {fileID: 2576562423796001089, guid: bbaaaa7ff10d83f4192ca942edf818e8, type: 3}
-  - {fileID: 2576562423796001089, guid: 878e2f2a06cb5cc48bfb09e0ee0de508, type: 3}
-  - {fileID: 2576562423796001089, guid: 913d35d19014aab41b1e0e229b840cb2, type: 3}
-  - {fileID: 2576562423796001089, guid: 16db6c4251b6a9247b26bb0e0c3f791e, type: 3}
+  - {fileID: 2576562423796001089, guid: 2fddcac23d9676a4d9773bc48658cdd2, type: 3}
