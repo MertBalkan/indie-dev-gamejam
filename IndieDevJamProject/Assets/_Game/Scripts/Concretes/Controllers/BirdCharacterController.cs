@@ -1,5 +1,3 @@
-using System;
-using SnaileyGame.Combats;
 using SnaileyGame.Movements;
 using UnityEngine;
 

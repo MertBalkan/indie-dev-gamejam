@@ -1,51 +1,42 @@
-using System;
-using SnaileyGame.Controllers;
 using UnityEngine;
 
 namespace SnaileyGame.Movements
 {
     public class PlatformMovement : MonoBehaviour
     {
-        [SerializeField] private float length;
-        [SerializeField] private float speed;
-        [SerializeField] private float direction = 1f;
-        
-        private SpriteRenderer _spriteRenderer;
-
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
+        [SerializeField] private float length = 2f; 
+        [SerializeField] private float speed = 5f; 
+        private bool movingRight = true;
 
         private void Update()
         {
             Move();
         }
 
-        public void Move()
+        private void Move()
         {
-            transform.Translate(Vector3.right * speed * direction * Time.deltaTime);
+            float movement = speed * Time.deltaTime; 
             
-            if (transform.position.x >= length)
+            if (movingRight)
             {
-                direction = -1f;
+                
+                transform.Translate(Vector3.right * movement);
             }
-            else if (transform.position.x <= -length)
+            else
             {
-                direction = 1f;
+                
+                transform.Translate(Vector3.left * movement);
             }
-        }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if(other.gameObject.GetComponent<PlayerCharacterController>() != null)
-                other.transform.SetParent(transform);
-        }
-        
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            if(other.gameObject.GetComponent<PlayerCharacterController>() != null)
-                other.transform.SetParent(null);
+            
+            if (transform.position.x >= length / 2f)
+            {
+                movingRight = false;
+            }
+            else if (transform.position.x <= -length / 2f)
+            {
+                movingRight = true;
+            }
         }
     }
 }

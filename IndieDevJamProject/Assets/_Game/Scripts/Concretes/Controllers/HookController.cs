@@ -115,7 +115,7 @@ namespace SnaileyGame.Controllers
                 
                 _isHooking = true;
 
-                Vector3 newScale = new Vector3(currentScale, 0.4f, 0.4f);
+                Vector3 newScale = new Vector3(currentScale, 0.25f, 0.25f);
                 hookPivot.transform.localScale = newScale;
             }
 
@@ -131,7 +131,7 @@ namespace SnaileyGame.Controllers
                 _playerAnimation.PlayShieldInAnimation();
                 hookEndPivot.TileController = null;
                 SetCurrentScaleToMinimum();
-                Vector3 resetScale = new Vector3(0.4f, 0.4f, 0.4f);
+                Vector3 resetScale = new Vector3(0.4f, 0.25f, 0.25f);
                 hookPivot.transform.localScale = resetScale;
                 _isHooking = false;
             }
@@ -143,7 +143,7 @@ namespace SnaileyGame.Controllers
             {
                 SetCurrentScaleToMinimum();
                 _playerAnimation.PlayPlayerAirAnimation();
-                Vector3 resetScale = new Vector3(0.4f, 0.4f, 0.4f);
+                Vector3 resetScale = new Vector3(0.4f, 0.25f, 0.25f);
                 hookPivot.transform.localScale = resetScale;
             }
         }
