@@ -13,7 +13,10 @@ namespace SnaileyGame.Managers
         [Header("Bioms")]
         [SerializeField] private BaseBiomController currentBiom;
         [SerializeField] private List<BaseBiomController> allBioms;
-
+        [SerializeField] private float biomOffset;
+        [SerializeField] private float nextBiomPosition;
+        
+        
         private bool _biomUpdated = false;
         private bool _updateScore = false;
 
@@ -49,7 +52,7 @@ namespace SnaileyGame.Managers
         public void UpdateBiom()
         {
             
-            if ((camera.transform.position.y >= 20 && camera.transform.position.y <= 200) && !_updateScore)
+            if ((camera.transform.position.y >= nextBiomPosition && camera.transform.position.y <= 200) && !_updateScore)
             {
                 _biomUpdated = true;
                 _updateScore = true;
@@ -64,6 +67,8 @@ namespace SnaileyGame.Managers
             {
                 allBioms[_currentBiomIndex].gameObject.SetActive(true);
                 currentBiom = allBioms[_currentBiomIndex];
+                currentBiom.transform.position = new Vector2(currentBiom.transform.position.x,
+                    currentBiom.transform.position.y + biomOffset);
                 _biomUpdated = false;
             }
         }

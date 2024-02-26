@@ -24,8 +24,8 @@ MonoBehaviour:
   distanceBetweenBlocks: 30
   distanceBeforeSpawnBLock: 20
   initBlocksLine: 2
-  initialBrickPosition: {x: 1, y: 2}
-  brickPosition: {x: 1, y: 2}
+  initialBrickPosition: {x: 0, y: 0}
+  brickPosition: {x: 0, y: 0}
   initWallsLine: 5
   wallTall: 11.25
   distanceBeforeSpawnWall: 5
