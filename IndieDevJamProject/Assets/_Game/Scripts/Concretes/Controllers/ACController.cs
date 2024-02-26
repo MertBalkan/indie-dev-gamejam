@@ -9,7 +9,14 @@ namespace SnaileyGame.Controllers
         [SerializeField] private float maxAcPlayTime = 2f;
         [SerializeField] private float acCloseTime = 3f;
 
+        private Animator _animator;
+        
         public bool ACPlaying => acPlaying;
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         private void Start()
         {
@@ -22,14 +29,18 @@ namespace SnaileyGame.Controllers
             {
                 if (!acPlaying)
                 {
-                    acPlaying = true;
+                    acPlaying = true;      
+                    _animator.SetTrigger("loop"); 
                 }
                 else 
                 {
+                    _animator.SetTrigger("loop");
                     yield return new WaitForSeconds(maxAcPlayTime);
+                    
+                    _animator.SetTrigger("end");
                     acPlaying = false;
                 }
-
+                
                 yield return new WaitForSeconds(acCloseTime);
             }
         }

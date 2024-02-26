@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using SnaileyGame.Controllers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SnaileyGame.Managers
 {
@@ -8,7 +9,8 @@ namespace SnaileyGame.Managers
     {
         [Header("Player")]
         [SerializeField] private Transform camera;
-
+        [SerializeField] private HookController hookController;
+        
         [Space(10)]
         [Header("Bioms")]
         [SerializeField] private BaseBiomController currentBiom;
@@ -24,6 +26,7 @@ namespace SnaileyGame.Managers
         
         private void Awake()
         {
+            hookController = FindObjectOfType<HookController>();
             ApplySingleton(this);
         }
 
@@ -61,12 +64,11 @@ namespace SnaileyGame.Managers
                 _currentBiomIndex++;
             }
             
-            //todo: fix
-
             if (_biomUpdated && _updateScore)
             {
                 allBioms[_currentBiomIndex].gameObject.SetActive(true);
                 currentBiom = allBioms[_currentBiomIndex];
+                hookController.IncreaseHookValue();
                 currentBiom.transform.position = new Vector2(currentBiom.transform.position.x,
                     currentBiom.transform.position.y + biomOffset);
                 _biomUpdated = false;

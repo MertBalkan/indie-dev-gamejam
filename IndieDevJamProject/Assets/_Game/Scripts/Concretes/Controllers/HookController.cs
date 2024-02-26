@@ -15,7 +15,8 @@ namespace SnaileyGame.Controllers
         [SerializeField] private float maxScale = 3;
         [SerializeField] private float currentScale = 0;
         [SerializeField] private float hookScaleSpeed = 0;
-        
+        [SerializeField] private float hookIncreaseValue = 0.5f;
+
         private BaseCharacterController _characterController;
         private PlayerAnimation _playerAnimation;
         private IFlip _flip;
@@ -23,6 +24,14 @@ namespace SnaileyGame.Controllers
         private bool _isHooking = false;
         private bool _lMoving = false;
         private bool _rMoving = false;
+        
+        public float MaxScale
+        {
+            get => maxScale;
+            set => maxScale = value;
+        }
+
+        public float HookIncreseValue => hookIncreaseValue;
 
         private void Awake()
         {
@@ -93,11 +102,6 @@ namespace SnaileyGame.Controllers
             yield break;
         }
 
-        private void AdjustAngleFromHookDirection()
-        {
-            
-        }
-
         private void LeftClickScale()
         {
             if (Input.GetMouseButton(0) && _characterController.OnGround)
@@ -150,9 +154,9 @@ namespace SnaileyGame.Controllers
             currentScale = minScale;
         }
         
-        private void FixedUpdate()
+        public void IncreaseHookValue()
         {
-            
+            maxScale += hookIncreaseValue;
         }
     }
 }
