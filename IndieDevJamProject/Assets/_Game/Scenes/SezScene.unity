@@ -663,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3133709208620941915, guid: 0ab91d23e98bbc04fbd07f56d7f9d6b0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab91d23e98bbc04fbd07f56d7f9d6b0, type: 3}
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hookPivot: {fileID: 1967832754}
   hookEndPivot: {fileID: 50390361}
-  maxScale: 2
+  maxScale: 6
   currentScale: 0
   hookScaleSpeed: 50
   hookIncreaseValue: 0.5
@@ -2243,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 472759442469321720, guid: 3fc3b3b5a6c1e314fb95483f3a407169, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 472759442469321723, guid: 3fc3b3b5a6c1e314fb95483f3a407169, type: 3}
       propertyPath: m_RootOrder
