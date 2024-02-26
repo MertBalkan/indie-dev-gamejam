@@ -492,7 +492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0.13791601, y: 0.000000017041954, z: 0.000000002373035, w: 0.99044394}
-  m_LocalPosition: {x: 0.029048946, y: -2.6280148, z: -9.253644}
+  m_LocalPosition: {x: 0.03298276, y: -2.6280148, z: -9.253644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   maxScale: 5
   currentScale: 0
   hookScaleSpeed: 50
+  hookIncreaseValue: 0.5
 --- !u!1 &1014221937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,10 +1566,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+  hookController: {fileID: 0}
   currentBiom: {fileID: 0}
   allBioms:
   - {fileID: 0}
   - {fileID: 573886540}
+  biomOffset: 0
+  nextBiomPosition: 0
 --- !u!4 &1845693277
 Transform:
   m_ObjectHideFlags: 0
@@ -2667,6 +2671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 236781262171511632, guid: 553dedada805f8f43be663572dd3176b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5023268090451399120, guid: 553dedada805f8f43be663572dd3176b, type: 3}
       propertyPath: m_RootOrder
       value: 13
