@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hookPivot: {fileID: 1967832754}
   hookEndPivot: {fileID: 50390361}
-  maxScale: 5
+  maxScale: 2
   currentScale: 0
   hookScaleSpeed: 50
   hookIncreaseValue: 0.5
@@ -2229,7 +2229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 472759442469321720, guid: 3fc3b3b5a6c1e314fb95483f3a407169, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 472759442469321723, guid: 3fc3b3b5a6c1e314fb95483f3a407169, type: 3}
       propertyPath: m_RootOrder
@@ -2334,7 +2334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513254833642230137, guid: ee785392e6d6d33438ac2c95c5835734, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee785392e6d6d33438ac2c95c5835734, type: 3}
@@ -2701,6 +2701,10 @@ PrefabInstance:
     - target: {fileID: 2260767625192560393, guid: a59d64524d1175846a65be856db57dd1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640930042106890538, guid: a59d64524d1175846a65be856db57dd1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59d64524d1175846a65be856db57dd1, type: 3}
