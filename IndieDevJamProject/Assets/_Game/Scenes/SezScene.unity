@@ -2149,6 +2149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform4_6
       objectReference: {fileID: 0}
+    - target: {fileID: 3133709208620941915, guid: baf5ff52dd6c0484db1e49f9176913e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf5ff52dd6c0484db1e49f9176913e8, type: 3}
 --- !u!1001 &110410392132392154
@@ -2330,7 +2334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513254833642230137, guid: ee785392e6d6d33438ac2c95c5835734, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee785392e6d6d33438ac2c95c5835734, type: 3}

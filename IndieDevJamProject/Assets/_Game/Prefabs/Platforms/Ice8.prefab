@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2576562423796001091}
   - component: {fileID: 2576562423796001101}
   - component: {fileID: 2576562423796001090}
+  - component: {fileID: 3027067113586272953}
   m_Layer: 7
   m_Name: Ice8
   m_TagString: Untagged
@@ -98,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7b203d9f56ee541834b50c72144703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBreakable: 0
+  speed: 5
+  moveDistance: 10
 --- !u!61 &2576562423796001090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,3 +128,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 0.31204337}
   m_EdgeRadius: 0
+--- !u!114 &3027067113586272953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576562423796001089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c95348ec4d09d449ba7d1dc0483ee26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
