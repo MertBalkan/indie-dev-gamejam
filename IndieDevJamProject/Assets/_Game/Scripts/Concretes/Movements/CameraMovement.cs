@@ -23,7 +23,7 @@ namespace SnaileyGame.Movements
 
         private void Update()
         {
-            StartCoroutine(CameraMoveUp());
+            MoveUp();
 
             if (transform.position.y >= 195 && transform.position.y <= 480)
             {
