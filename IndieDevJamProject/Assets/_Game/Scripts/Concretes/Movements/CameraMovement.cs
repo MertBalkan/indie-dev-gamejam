@@ -14,7 +14,11 @@ namespace SnaileyGame.Movements
         public float difficultyDecreaseRate = 0.2f;
         public float minimumDifficulty = 0.6f;
         public float increaseRate = 2;
-      
+
+
+        private bool v1 = false;
+        private bool v2 = false;
+        private bool v3 = false;
 //200
 //480
 //875
@@ -33,19 +37,16 @@ namespace SnaileyGame.Movements
             if (transform.position.y >= 195 && transform.position.y <= 480)
             {
                 _hookController.IncreaseHookValue(4f);
-                cameraMoveSpeed += 1;
             }
             
             if (transform.position.y > 480 && transform.position.y < 875f)
             {
                 _hookController.IncreaseHookValue(5f);
-                cameraMoveSpeed += 1;
             }
             
             if (transform.position.y >= 875f)
             {
                 _hookController.IncreaseHookValue(6);
-                cameraMoveSpeed += 1;
             }
         }
 
