@@ -17743,7 +17743,7 @@ PrefabInstance:
       objectReference: {fileID: 910253565}
     - target: {fileID: 2667663494402695265, guid: 777b236284628814eb0ee701f30ca3f3, type: 3}
       propertyPath: cameraMoveSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2667663494402695265, guid: 777b236284628814eb0ee701f30ca3f3, type: 3}
       propertyPath: minimumDifficulty
