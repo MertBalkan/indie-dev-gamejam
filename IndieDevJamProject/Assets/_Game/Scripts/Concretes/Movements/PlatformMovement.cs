@@ -5,7 +5,7 @@ namespace SnaileyGame.Movements
     public class PlatformMovement : MonoBehaviour
     {
         [SerializeField] private float length = 2f; 
-        [SerializeField] private float speed = 5f; 
+        [SerializeField] private float speed = 2f; 
         private bool movingRight = true;
 
         private void Update()
